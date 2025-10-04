@@ -17,7 +17,7 @@ I am currently too busy to work on this, but I will get to it, eventually.
 - ESP32 (arduino, micropython, circuitpython, good arduino support for reticulum)
 - bluetooth & wifi
 - sound: it has a speaker-jack (and a i2s amp-chip on-board.) This would be cool for notifications, and maybe eventually voice!
-- SD card for storing notifcation sounds, downloaded files & messages, identity, etc. Could be encrypted-at-rest, for better physical security.
+- SD card for storing notifcation sounds, downloaded files & messages, identity, etc. Could be encrypted-at-rest, for better physical security (turn it off, and no one can get  your private key without a password.)
 - no battery, but could run off a standard old phone-battery
 - does not require any assembly, other than connecting the radio (5 wires, including power)
 
