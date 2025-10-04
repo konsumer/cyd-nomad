@@ -25,4 +25,4 @@ I am currently too busy to work on this, but I will get to it, eventually.
 ### Notes
 
 - look into LVGL. There is already a [nice onscreen keyboard demo](https://docs.lvgl.io/8.3/widgets/extra/keyboard.html#keyboard-with-text-area)
-- [R307 thumbprint sensor](https://www.aliexpress.us/item/2251832771781021.html) seems nice for physical-security (decrypt private keys with finger.) I have seen them for around $7.
+- [R307 thumbprint sensor](https://www.aliexpress.us/item/2251832771781021.html) seems nice for physical-security (decrypt private keys with finger.) I have seen them for around $7. you could even record 1 finger as "kill switch" and one as "unlock" for sneaky ability to wipe it.
