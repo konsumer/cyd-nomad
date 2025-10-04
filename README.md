@@ -26,6 +26,7 @@ The goal with this is to make it as easy as possible to create a kind of hybrid 
 ### Notes
 
 - look into LVGL. There is already a [nice onscreen keyboard demo](https://docs.lvgl.io/8.3/widgets/extra/keyboard.html#keyboard-with-text-area)
+- [this article](https://randomnerdtutorials.com/cheap-yellow-display-esp32-2432s028r/) has some pretty complete directions for interfacinf all the peripherals
 - [thumbprint sensor](https://www.aliexpress.us/item/3256808453331144.html) seems nice for physical-security (decrypt private keys with finger.) I have seen them for around $3. It could be used with finger combos (middle, ring, etc) and "duress pattern" to wipe
 - [microreticulum](https://github.com/attermann/microReticulum) is a good place to start looking at client-code, but it should probly be simplified/abstracted for general use
 - it would be cool if it was [rnode-compatable](https://unsigned.io/rnode_firmware/) so you can use it like that (with phone/computer) or press a button to go into "client mode"
