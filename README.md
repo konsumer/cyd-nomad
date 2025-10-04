@@ -12,13 +12,14 @@ I am currently too busy to work on this, but I will get to it, eventually.
 
 ### Features:
 
-- (resistive) 320 x 240 LCD touchscreen. not great, but usable.
-- ESP32 (arduino, miicropython, circuitpython, good arduino support for reticulum)
-- bluetooth & wifi
-- sound: it has a speaker-jack (and a i2s chip on-board.) This would be cool for notifications, and maybe eventuially voice!
-- no battery, but could run off a standard old phone-battery
 - should cost about $20, with shipping
-- does  not require any assembly, other than connecting the radio (5 wires, including power)
+- (resistive) 320 x 240 LCD touchscreen. not great, but usable.
+- ESP32 (arduino, micropython, circuitpython, good arduino support for reticulum)
+- bluetooth & wifi
+- sound: it has a speaker-jack (and a i2s amp-chip on-board.) This would be cool for notifications, and maybe eventually voice!
+- SD card for storing notifcation sounds, downloaded files & messages, identity, etc
+- no battery, but could run off a standard old phone-battery
+- does not require any assembly, other than connecting the radio (5 wires, including power)
 
 
 ### Notes
