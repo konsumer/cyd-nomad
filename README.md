@@ -26,6 +26,6 @@ The goal with this is to build this (once I have a lil more free-time) and make 
 ### Notes
 
 - look into LVGL. There is already a [nice onscreen keyboard demo](https://docs.lvgl.io/8.3/widgets/extra/keyboard.html#keyboard-with-text-area)
-- [R307 thumbprint sensor](https://www.aliexpress.us/item/2251832771781021.html) seems nice for physical-security (decrypt private keys with finger.) I have seen them for around $7. you could even record 1 finger as "kill switch" and one as "unlock" for sneaky ability to wipe it.
+- [R307 thumbprint sensor](https://www.aliexpress.us/item/2251832771781021.html) seems nice for physical-security (decrypt private keys with finger.) I have seen them for around $7. you could even record 1 finger as "kill switch" and one as "unlock" for sneaky ability to wipe it, under duress
 - [microreticulum](https://github.com/attermann/microReticulum) is a good place to start looking at client-code, but it should probly be simplified/abstracted for general use
 - it would be cool if it was [rnode-compatable](https://unsigned.io/rnode_firmware/) so you can use it like that (with phone/computer) or press a button to go into "client mode"
