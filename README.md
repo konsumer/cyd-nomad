@@ -13,6 +13,7 @@ The goal with this is to build this (once I have a lil more free-time) and make 
 - (resistive) 320 x 240 LCD touchscreen. not great, but usable.
 - ESP32 (arduino, miicropython, circuitpython, good arduino support for reticulum)
 - bluetooth & wifi
+- sound: it has a speaker-jack (and a i2s chip on-board.) This would be cool for notifications, and maybe eventuially voice!
 - no battery, but could run off a standard old phone-battery
 - should cost about $20, with shipping
 - does  not require any assembly, other than connecting the radio (5 wires, including power)
