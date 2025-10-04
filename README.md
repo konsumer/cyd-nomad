@@ -19,7 +19,7 @@ The goal with this is to build this (once I have a lil more free-time) and make 
 - bluetooth & wifi
 - sound: it has a speaker-jack (and a i2s amp-chip on-board.) This would be cool for notifications, and maybe eventually voice!
 - SD card for storing notifcation sounds, downloaded files & messages, identity, etc. Could be encrypted-at-rest, for better physical security (turn it off, and no one can get  your private key without a password.)
-- no battery, but could run off a standard old phone-battery
+- no battery, but could run off a standard old phone-battery. I really like [these cute, lightweight, long-life things](https://www.amazon.com/DCHK-20000mAh-Charging-Portable-Motorola/dp/B0DPWVYMN5)
 - does not require any assembly, other than connecting the radio (5 wires, including power)
 
 
