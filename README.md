@@ -13,7 +13,7 @@ The goal with this is to make it as easy as possible to create a kind of hybrid 
 
 ### Features:
 
-- should cost about $20, with shipping
+- should cost well-under $20, with shipping
 - (resistive) 320 x 240 LCD touchscreen. not great, but usable.
 - ESP32 (arduino, micropython, circuitpython, good arduino support for reticulum)
 - bluetooth & wifi
@@ -31,3 +31,4 @@ The goal with this is to make it as easy as possible to create a kind of hybrid 
 - [thumbprint sensor](https://www.aliexpress.us/item/3256808453331144.html) seems nice for physical-security (decrypt private keys with finger.) I have seen them for around $3. It could be used with finger combos (middle, ring, etc) and "duress pattern" to wipe
 - [microreticulum](https://github.com/attermann/microReticulum) is a good place to start looking at client-code, but it should probly be simplified/abstracted for general use
 - it would be cool if it was [rnode-compatable](https://unsigned.io/rnode_firmware/) so you can use it like that (with phone/computer) or press a button to go into "client mode"
+- Good in-depth [pinout info](https://randomnerdtutorials.com/esp32-cheap-yellow-display-cyd-pinout-esp32-2432s028r/)
