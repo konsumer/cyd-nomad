@@ -32,3 +32,5 @@ The goal with this is to make it as easy as possible to create a kind of hybrid 
 - [microreticulum](https://github.com/attermann/microReticulum) is a good place to start looking at client-code, but it should probly be simplified/abstracted for general use
 - it would be cool if it was [rnode-compatable](https://unsigned.io/rnode_firmware/) so you can use it like that (with phone/computer) or press a button to go into "client mode"
 - Good in-depth [pinout info](https://randomnerdtutorials.com/esp32-cheap-yellow-display-cyd-pinout-esp32-2432s028r/)
+- [this](https://github.com/SzymonPriv/CydExample) is a great example for arduino that uses all CYD peripherals
+- I will probably need to reuse the SD SPI pins (all except CS) for radio. There are these [extender things](https://www.sparkfun.com/sparkfun-microsd-sniffer.html) but soldering to the board should be fine.
