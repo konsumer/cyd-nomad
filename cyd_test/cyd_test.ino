@@ -210,10 +210,11 @@ void setup() {
   xTaskCreate(task_blink_rgb, "BlinkGreen", 2048, (void*)LED_G, 1, NULL);
   xTaskCreate(task_show_cyd, "ShowCyd", 2048, NULL, 1, NULL);
   
-  // this seems to cause conflict with touch
+  // this seems to sometimes conflict with touch/tft
+  // so you might want to pause touch while you use it
   // xTaskCreate(task_sd_test, "SDTest", 8192, NULL, 1, NULL);
   
-  // these are annoyig!
+  // these are annoying!
   // xTaskCreate(task_audio_dac, "AudioDacTest", 2048, NULL, 1, NULL);
   // xTaskCreate(task_audio_i2s, "Audioi2sTest", 4096, NULL, 1, NULL);
 }
