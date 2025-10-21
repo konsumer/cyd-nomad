@@ -7,7 +7,7 @@ The goal with this is to make it as easy as possible to create a kind of hybrid 
 
 ### Features:
 
-- should cost well-under $20, with shipping
+- should cost under $30, with shipping
 - (resistive) 320 x 240 LCD touchscreen. not great, but usable.
 - ESP32 (arduino, micropython, circuitpython, good arduino support for reticulum)
 - bluetooth & wifi
@@ -18,16 +18,14 @@ The goal with this is to make it as easy as possible to create a kind of hybrid 
 
 ### Hardware
 
-- [CYDs](https://www.aliexpress.us/item/3256808128499162.html) are cool & cheap, self-contained, and easy to source. They have [pretty good support](https://github.com/witnessmenow/ESP32-Cheap-Yellow-Display)
-- SPI radio-board, like [this](https://www.aliexpress.us/item/3256805989899200.html) Get the right freq for your region (in US: 915)
-
-I am specifically using [this USB-C variant](https://www.tztstore.com/goods/show-7983.html) (no micro-usb, only single USBC) so things might be a lil different than your setup, but pretty similar. One example is I use `TFT_INVERSION_ON` and `TFT_BL` set to pin 27 (not 21) in my [User_Setup.h](User_setup.h). With this CYD stuff, there are just tons of variations, and it you might find it cheaper to just go with the flow on that (these were $5!) and experiment a little. I carefully examined the downloads that they made available to figure out the pins.
-
-I abstracted this by modifying [pins.h](pins.h), which you can use in your own sketch, as well as [User_Setup.h](User_setup.h), which you should put in Arduino/libraries/TFT_eSPI/
+- [CYDs](https://www.aliexpress.us/item/3256808128499162.html) are cool & cheap, self-contained, and easy to source. They have [pretty good support](https://github.com/witnessmenow/ESP32-Cheap-Yellow-Display). I am specifically using [this USB-C variant](https://www.tztstore.com/goods/show-7983.html) (no micro-usb, only single USB-C) so things might be a lil different than your setup, but pretty similar. One example is I use `TFT_INVERSION_ON` and `TFT_BL` set to pin 27 (not 21, like some CYDs) in my [User_Setup.h](User_setup.h). With this CYD stuff, there are just tons of variations, and it you might find it cheaper to just go with the flow on that (these were $14, shipped to US!) and experiment a little. I carefully examined [the downloads](https://www.tztstore.com/goods/show-7983.html) that they made available to figure out the [pins](pins.h). This project is very much about supporting whatever devices you find, with a little work.
+- SPI SX1276 (or similar) radio-board, like [this](https://www.aliexpress.us/item/3256805989899200.html) Get the right freq for your region (in US: 915)
 
 ### Software
 
 I am using arduino-cli, and I included a [Makefile](Makefile) to make things easier. Run `make` for help.
+
+I abstracted differences in CYD-like hardware by modifying [pins.h](pins.h), which you can use in your own sketch, as well as [User_Setup.h](User_setup.h), which you should put in Arduino/libraries/TFT_eSPI/
 
 ### Notes
 
