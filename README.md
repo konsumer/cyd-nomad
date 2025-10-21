@@ -5,12 +5,6 @@ I have been thinking about how to make a full standalone lora reticulum node/cli
 
 The goal with this is to make it as easy as possible to create a kind of hybrid pocket-device, that does similar to RNode (like on a heltec v3) but also allows you to free yourself from using a phone or more expensive hardware (like those [fancier blackberry-keyboard things](https://lilygo.cc/products/t-deck?srsltid=AfmBOooNlbN6kFLsLGA_LThQp4CTwV2MoVRcYSb0au0VrHBD6YNL0vFe).)
 
-### Hardware
-
-- [CYDs](https://www.aliexpress.us/item/3256808128499162.html) are cool & cheap, self-contained, and easy to source. They have [pretty good support](https://github.com/witnessmenow/ESP32-Cheap-Yellow-Display)
-- SPI radio-board, like [this](https://www.aliexpress.us/item/3256805989899200.html) Get the right freq for your region (in US: 915)
-
-
 ### Features:
 
 - should cost well-under $20, with shipping
@@ -18,10 +12,22 @@ The goal with this is to make it as easy as possible to create a kind of hybrid 
 - ESP32 (arduino, micropython, circuitpython, good arduino support for reticulum)
 - bluetooth & wifi
 - sound: it has a speaker-jack (and a i2s amp-chip on-board.) This would be cool for notifications, and maybe eventually voice!
-- SD card for storing notifcation sounds, downloaded files & messages, identity, etc. Could be encrypted-at-rest, for better physical security (turn it off, and no one can get  your private key without a password.)
+- SD card for storing notifcation sounds, downloaded files & messages, identity, etc. Could be encrypted-at-rest, for better physical security (turn it off, and no one can get your private key without a password.)
 - no battery, but could run off a standard old phone-battery. I really like [these cute, lightweight, long-life things](https://www.amazon.com/DCHK-20000mAh-Charging-Portable-Motorola/dp/B0DPWVYMN5)
 - does not require any assembly, other than connecting the radio (5 wires, including power)
 
+### Hardware
+
+- [CYDs](https://www.aliexpress.us/item/3256808128499162.html) are cool & cheap, self-contained, and easy to source. They have [pretty good support](https://github.com/witnessmenow/ESP32-Cheap-Yellow-Display)
+- SPI radio-board, like [this](https://www.aliexpress.us/item/3256805989899200.html) Get the right freq for your region (in US: 915)
+
+I am specifically using [this USB-C variant](https://www.tztstore.com/goods/show-7983.html) (no micro-usb, only single USBC) so things might be a lil different than your setup, but pretty similar. One example is I use `TFT_INVERSION_ON` and `TFT_BL` set to pin 27 (not 21) in my [User_Setup.h](User_setup.h). With this CYD stuff, there are just tons of variations, and it you might find it cheaper to just go with the flow on that (these were $5!) and experiment a little. I carefully examined the downloads that they made available to figure out the pins.
+
+I abstracted this by modifying [pins.h](pins.h), which you can use in your own sketch, as well as [User_Setup.h](User_setup.h), which you should put in Arduino/libraries/TFT_eSPI/
+
+### Software
+
+I am using arduino-cli, and I included a [Makefile](Makefile) to make things easier. Run `make` for help.
 
 ### Notes
 
