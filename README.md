@@ -46,3 +46,4 @@ I am using arduino-cli, and I included a [Makefile](Makefile) to make things eas
 - Good in-depth [pinout info](https://randomnerdtutorials.com/esp32-cheap-yellow-display-cyd-pinout-esp32-2432s028r/)
 - [this](https://github.com/SzymonPriv/CydExample) is a great example for arduino that uses all CYD peripherals
 - I will probably need to reuse the SD SPI pins (all except CS) for radio. There are these [extender things](https://www.sparkfun.com/sparkfun-microsd-sniffer.html) but soldering to the board should be fine.
+- There are some [cool mods](https://www.instructables.com/Retro-Handheld-Based-on-the-ESP32-CYD-and-RetroGo/) to increase RAM and generally make it do lots more.
