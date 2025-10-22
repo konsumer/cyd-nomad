@@ -29,10 +29,10 @@ cyd_test: ## Compile cyd_test
 cyd_test_upload: cyd_test  ## Compile & upload cyd_test
 	${ARDUINO_CLI} upload -p "${ARDUINO_DEVICE}" --fqbn "${ARDUINO_BOARD}" cyd_test
 
-test: cyd_test_upload monitor ## quick test that builds, uploads and monitors serial port
+test: cyd_test_upload monitor ## build/upload cyd_test and monitor serial port
 
-nomad: ## Compile cyd_nomad
+cyd_nomad: ## Compile cyd_nomad
 	${ARDUINO_CLI} compile --fqbn "${ARDUINO_BOARD}" cyd_nomad
 
-nomad_upload: nomad ## Compile & upload cyd_nomad
+cyd_nomad_upload: nomad ## Compile & upload cyd_nomad
 	${ARDUINO_CLI} upload -p "${ARDUINO_DEVICE}" --fqbn "${ARDUINO_BOARD}" cyd_nomad
