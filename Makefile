@@ -1,13 +1,13 @@
 .PHONY: help setup monitor cyd_test upload_cyd_test
 
 # arduino-cli board list
-ARDUINO_DEVICE := /dev/ttyUSB0
+ARDUINO_DEVICE ?= /dev/ttyUSB0
 
 # arduino-cli board listall esp32:esp32
-ARDUINO_BOARD := esp32:esp32:esp32
+ARDUINO_BOARD ?= esp32:esp32:esp32
 
 ARDUINO_CLI_LOCATION := ~/.local/bin
-ARDUINO_CLI := ${ARDUINO_CLI_LOCATION}/arduino-cli
+ARDUINO_CLI ?= ${ARDUINO_CLI_LOCATION}/arduino-cli
 
 help: ## Show this help message
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
@@ -27,7 +27,7 @@ cyd_test: ## Compile cyd_test
 	${ARDUINO_CLI} compile --fqbn "${ARDUINO_BOARD}" cyd_test
 
 cyd_test_upload: cyd_test  ## Compile & upload cyd_test
-	${ARDUINO_CLI} upload -p "${ARDUINO_DEVICE}" --fqbn "${ARDUINO_BOARD}" cyd_test
+	${ARDUINO_CLI} upload -p "${ARDUINO_DEVICE}" --fqbn "${ARDUINO_BOARD}:UploadSpeed=115200" cyd_test
 
 test: cyd_test_upload monitor ## build/upload cyd_test and monitor serial port
 
@@ -35,4 +35,4 @@ cyd_nomad: ## Compile cyd_nomad
 	${ARDUINO_CLI} compile --fqbn "${ARDUINO_BOARD}" cyd_nomad
 
 cyd_nomad_upload: nomad ## Compile & upload cyd_nomad
-	${ARDUINO_CLI} upload -p "${ARDUINO_DEVICE}" --fqbn "${ARDUINO_BOARD}" cyd_nomad
+	${ARDUINO_CLI} upload -p "${ARDUINO_DEVICE}" --fqbn "${ARDUINO_BOARD}:UploadSpeed=115200" cyd_nomad

@@ -47,3 +47,4 @@ I am using arduino-cli, and I included a [Makefile](Makefile) to make things eas
 - [this](https://github.com/SzymonPriv/CydExample) is a great example for arduino that uses all CYD peripherals
 - I will probably need to reuse the SD SPI pins (all except CS) for radio. There are these [extender things](https://www.sparkfun.com/sparkfun-microsd-sniffer.html) but soldering to the board should be fine.
 - There are some [cool mods](https://www.instructables.com/Retro-Handheld-Based-on-the-ESP32-CYD-and-RetroGo/) to increase RAM and generally make it do lots more.
+- work out a good 3d-printed case. [this one](https://www.printables.com/model/1159369-cyd-24-inch-screen-case-cyd-esp32-2432s024c) is close, but I need to make sure it has space for battery, tighter screen-fit, and space for lora chip/antenna. [This](https://www.printables.com/model/1324890-cyd-cheap-yellow-display-modular-case), as a base, might be nice for supporing different configurations
