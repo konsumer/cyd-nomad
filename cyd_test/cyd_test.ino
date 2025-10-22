@@ -66,8 +66,8 @@ void task_show_cyd(void *parameter) {
       p.z = 0;
     }
 
-    sprintf(line1, "X: %d. Y: %d, Pressure: %d", p.x, p.y, p.z);
-    sprintf(line2, "BOOT: %d, LDR: %d", digitalRead(BTN_BOOT), analogRead(LDR_PIN));
+    sprintf(line1, "X:%d Y:%d Z:%d", p.x, p.y, p.z);
+    sprintf(line2, "BOOT:%d LDR:%d", digitalRead(BTN_BOOT), analogRead(LDR_PIN));
 
     Serial.print(line1);
     Serial.print(" ");
