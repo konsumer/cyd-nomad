@@ -59,7 +59,6 @@ void task_show_cyd(void *parameter) {
   tft.fillScreen(TFT_BLACK);
   tft.setTextColor(TFT_WHITE, TFT_BLACK);
 
-
   while (true) {
     if (ts.tirqTouched() && ts.touched()) {
       p = ts.getPoint();
@@ -74,6 +73,7 @@ void task_show_cyd(void *parameter) {
     Serial.print(" ");
     Serial.println(line2);
 
+    // I could not get setTextPadding to work
     // pad with space, so it blocks out previous without flicker
     sprintf(line1p, "          %s          ", line1);
     sprintf(line2p, "          %s          ", line2);
