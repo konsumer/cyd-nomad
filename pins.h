@@ -34,4 +34,4 @@
 #define LDR_PIN 34
 
 // Boot Button
-#define BTN_BOOT 0  // IO0
+#define BTN_BOOT 0

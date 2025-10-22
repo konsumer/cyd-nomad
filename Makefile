@@ -23,10 +23,16 @@ monitor: ## Monitor serial-port
 	${ARDUINO_CLI} monitor -p ${ARDUINO_DEVICE} --config 115200
 
 
-cyd_test:
+cyd_test: ## Compile cyd_test
 	${ARDUINO_CLI} compile --fqbn "${ARDUINO_BOARD}" cyd_test
 
-upload_cyd_test: cyd_test
+cyd_test_upload: cyd_test  ## Compile & upload cyd_test
 	${ARDUINO_CLI} upload -p "${ARDUINO_DEVICE}" --fqbn "${ARDUINO_BOARD}" cyd_test
 
-test: cyd_test upload_cyd_test monitor ## quick test that builds, uploads and monitors serial port
+test: cyd_test_upload monitor ## quick test that builds, uploads and monitors serial port
+
+nomad: ## Compile cyd_nomad
+	${ARDUINO_CLI} compile --fqbn "${ARDUINO_BOARD}" cyd_nomad
+
+nomad_upload: nomad ## Compile & upload cyd_nomad
+	${ARDUINO_CLI} upload -p "${ARDUINO_DEVICE}" --fqbn "${ARDUINO_BOARD}" cyd_nomad

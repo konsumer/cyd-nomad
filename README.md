@@ -1,5 +1,5 @@
 > [!WARNING]
-> There is nothing here, yet, other than ideas. I am currently too busy to work on this, but I will get to it, eventually, and add some actual code.
+> There is not much here, yet, other than ideas. I am currently too busy to work on this, but I will get to it, eventually, and add some actual code.
 
 I have been thinking about how to make a full standalone lora reticulum node/client as cheap as possible, and easy to assemble, so it becomes semi-disposable (cheap & easy to make more.)
 
@@ -25,15 +25,23 @@ The goal with this is to make it as easy as possible to create a kind of hybrid 
 
 I am using arduino-cli, and I included a [Makefile](Makefile) to make things easier. Run `make` for help.
 
-I abstracted differences in CYD-like hardware by modifying [pins.h](pins.h), which you can use in your own sketch, as well as [User_Setup.h](User_setup.h), which you should put in Arduino/libraries/TFT_eSPI/
+### Setup
+
+- First test with [cyd_test](cyd_test). Get that working and try running all the tasks (maybe seperately, since some thigns conflict). If things don't work, double-check [pins.h](pins.h) and [User_Setup.h](User_setup.h), which you should put in Arduino/libraries/TFT_eSPI/ until you are sure everything works. I had a few pins that were different than standard CYDs.
+- Install cyd_nomad for the actual client
+
+### concepts
+
+- All messages & keys are stored on SD card. I may eventually encrypt keys, so it's safe at rest.
+- Everything runs as RTOS services. Even if you disable the GUI (or change how it works) you can still read/write from SD card
+- The whole thing should build easily in ArduinoIDE or arduino-cli
 
 ### Notes
 
 - look into LVGL. There is already a [nice onscreen keyboard demo](https://docs.lvgl.io/8.3/widgets/extra/keyboard.html#keyboard-with-text-area)
-- [this article](https://randomnerdtutorials.com/cheap-yellow-display-esp32-2432s028r/) has some pretty complete directions for interfacinf all the peripherals
-- [micropython](https://randomnerdtutorials.com/micropython-cheap-yellow-display-board-cyd-esp32-2432s028r/) would be nice, but crypto was very tricky
+- [this article](https://randomnerdtutorials.com/cheap-yellow-display-esp32-2432s028r/) has some pretty complete directions for interfacing all the peripherals
 - [thumbprint sensor](https://www.aliexpress.us/item/3256808453331144.html) seems nice for physical-security (decrypt private keys with finger.) I have seen them for around $3. It could be used with finger combos (middle, ring, etc) and "duress pattern" to wipe
-- [microreticulum](https://github.com/attermann/microReticulum) is a good place to start looking at client-code, but it should probly be simplified/abstracted for general use
+- [microreticulum](https://github.com/attermann/microReticulum) is a good place to start looking at client-code, but it should probly be simplified/abstracted for general use. I also made [reticulum-arduino](https://github.com/konsumer/reticulum-arduino)
 - it would be cool if it was [rnode-compatable](https://unsigned.io/rnode_firmware/) so you can use it like that (with phone/computer) or press a button to go into "client mode"
 - Good in-depth [pinout info](https://randomnerdtutorials.com/esp32-cheap-yellow-display-cyd-pinout-esp32-2432s028r/)
 - [this](https://github.com/SzymonPriv/CydExample) is a great example for arduino that uses all CYD peripherals
