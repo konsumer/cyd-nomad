@@ -45,7 +45,6 @@ void task_show_cyd(void *parameter) {
   ts.setRotation(1);
   tft.init();
   tft.setRotation(1);
-  tft.fillScreen(TFT_BLACK);
 
   pinMode(BTN_BOOT, INPUT);
   pinMode(LDR_PIN, INPUT);
@@ -53,11 +52,19 @@ void task_show_cyd(void *parameter) {
   TS_Point p = {};
   char line1[100] = {};
   char line2[100] = {};
+  char line1p[100] = {};
+  char line2p[100] = {};
+
+  
+  tft.fillScreen(TFT_BLACK);
+  tft.setTextColor(TFT_WHITE, TFT_BLACK);
 
 
   while (true) {
     if (ts.tirqTouched() && ts.touched()) {
       p = ts.getPoint();
+    }else {
+      p.z = 0;
     }
 
     sprintf(line1, "X: %d. Y: %d, Pressure: %d", p.x, p.y, p.z);
@@ -67,10 +74,11 @@ void task_show_cyd(void *parameter) {
     Serial.print(" ");
     Serial.println(line2);
 
-    tft.fillScreen(TFT_BLACK);
-    tft.setTextColor(TFT_WHITE, TFT_BLACK);
-    tft.drawCentreString(line1, TFT_HEIGHT/2, (TFT_WIDTH/2) - 16, 2);
-    tft.drawCentreString(line2, TFT_HEIGHT/2, TFT_WIDTH/2, 2);
+    // pad with space, so it blocks out previous without flicker
+    sprintf(line1p, "          %s          ", line1);
+    sprintf(line2p, "          %s          ", line2);
+    tft.drawCentreString(line1p, TFT_HEIGHT/2, (TFT_WIDTH/2) - 16, 2);
+    tft.drawCentreString(line2p, TFT_HEIGHT/2, TFT_WIDTH/2, 2);
 
     vTaskDelay(100 / portTICK_PERIOD_MS);
   }

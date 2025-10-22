@@ -16,6 +16,13 @@
 #define TP_OUT   12
 #define TP_IRQ   36
 
+// same, for https://randomnerdtutorials.com/lvgl-cheap-yellow-display-esp32-2432s028r/
+#define XPT2046_CLK TP_CLK
+#define XPT2046_CS TP_CS
+#define XPT2046_IRQ TP_IRQ
+#define XPT2046_MISO TP_DIN
+#define XPT2046_MOSI TP_OUT
+
 // TF Card (SD Card)
 #define SD_CS    5
 #define SD_MOSI  23
